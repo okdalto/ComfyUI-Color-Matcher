@@ -1,5 +1,5 @@
 [project]
-name = "comfyui-color-matcher"
+name = "ComfyUI-Color-Matcher"
 description = "ComfyUI node for color matching between images using color-matcher library"
 version = "1.0.0"
 license = {file = "LICENSE"}

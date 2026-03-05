@@ -1,0 +1,21 @@
+name: Publish to Comfy Registry
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "pyproject.toml"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: robinraju/release-downloader@v1
+        with:
+          repository: "Comfy-Org/registry-cli"
+          latest: true
+          fileName: "comfy-cli-linux-x64"
+      - run: chmod +x comfy-cli-linux-x64
+      - run: ./comfy-cli-linux-x64 publish --token ${{ secrets.REGISTRY_ACCESS_TOKEN }}

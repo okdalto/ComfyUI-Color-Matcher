@@ -1,6 +1,6 @@
-name: Publish to Comfy Registry
-
+name: Publish to Comfy registry
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -8,14 +8,13 @@ on:
       - "pyproject.toml"
 
 jobs:
-  publish:
+  publish-node:
+    name: Publish Custom Node to registry
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: robinraju/release-downloader@v1
+      - name: Check out code
+        uses: actions/checkout@v4
+      - name: Publish Custom Node
+        uses: Comfy-Org/publish-node-action@main
         with:
-          repository: "Comfy-Org/registry-cli"
-          latest: true
-          fileName: "comfy-cli-linux-x64"
-      - run: chmod +x comfy-cli-linux-x64
-      - run: ./comfy-cli-linux-x64 publish --token ${{ secrets.REGISTRY_ACCESS_TOKEN }}
+          personal_access_token: ${{ secrets.REGISTRY_ACCESS_TOKEN }}

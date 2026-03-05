@@ -1,5 +1,7 @@
 # ComfyUI-Color-Matcher
 
+![ComfyUI Color Matcher](assets/main.png)
+
 ComfyUI custom node for color matching between images. Transfers the color distribution from a reference image to source images or video frames.
 
 ## Features
@@ -36,8 +38,8 @@ ComfyUI custom node for color matching between images. Transfers the color distr
 
 ### Inputs
 
-- **src_images** (IMAGE) - Source image or video frames to apply color matching to
-- **ref_image** (IMAGE) - Reference image whose color distribution will be transferred
+- **image_ref** (IMAGE) - Reference image whose color distribution will be transferred
+- **image_target** (IMAGE) - Source image or video frames to apply color matching to
 - **method** (COMBO) - Color matching algorithm to use
 
 ### Output

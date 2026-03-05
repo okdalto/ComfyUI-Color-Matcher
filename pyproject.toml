@@ -9,6 +9,6 @@ dependencies = ["numpy", "color-matcher"]
 Repository = "https://github.com/okdalto/ComfyUI-Color-Matcher"
 
 [tool.comfy]
-PublisherId = "okdalto"
+PublisherId = "seonghyeon"
 DisplayName = "ComfyUI-Color-Matcher"
 Icon = ""
